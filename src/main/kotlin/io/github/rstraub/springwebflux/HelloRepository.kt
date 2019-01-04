@@ -1,5 +1,7 @@
 package io.github.rstraub.springwebflux
 
-import org.springframework.data.repository.reactive.ReactiveCrudRepository
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository
+import org.springframework.stereotype.Repository
 
-interface HelloRepository : ReactiveCrudRepository<Hello, String>
+@Repository
+interface HelloRepository : ReactiveMongoRepository<Hello, String>
