@@ -48,7 +48,11 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	runtimeOnly('org.springframework.boot:spring-boot-devtools')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.boot:spring-boot-starter-test') {
+		exclude module: 'junit'
+	}
+	testImplementation('org.junit.jupiter:junit-jupiter-api')
+	testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
 	testImplementation('io.projectreactor:reactor-test')
 	testImplementation("org.mockito:mockito-core:2.23.4")
 }
