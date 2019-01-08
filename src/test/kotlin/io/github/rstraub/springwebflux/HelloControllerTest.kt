@@ -40,6 +40,6 @@ class HelloControllerTest {
                 .get()
                 .exchange()
                 .expectStatus()
-                .is5xxServerError
+                .is2xxSuccessful
     }
 }
